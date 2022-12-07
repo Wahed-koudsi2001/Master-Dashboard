@@ -1,0 +1,532 @@
+:root {
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: white;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--blue-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-alt-color);
+}
+.page {
+    background-color: #f1f5f9;
+    min-height: 100vh;
+}
+/* Start Side Bar */
+.sidebar {
+    width: 250px;
+    box-shadow: 0 0 10px #ddd;
+}
+.sidebar > h3 {
+    margin-bottom: 50px;
+}
+.sidebar > h3::before,
+.sidebar > h3::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    background-color: #000;
+    transform: translateX(-50%);
+}
+
+.sidebar > h3::before {
+    bottom: -20px;
+    width: 50px;
+    height: 2px;
+    transition: 0.2s linear;
+}
+.sidebar > h3:hover::before {
+    width: 80px;
+}
+.sidebar > h3::after {
+    bottom: -29px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+.sidebar ul li a {
+    transition: 0.3s;
+    margin-bottom: 5px;
+}
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #f6f6f6;
+}
+.sidebar ul li a span {
+    font-size: 14px;
+    margin-left: 10px;
+}
+@media (max-width: 767px) {
+    .sidebar {
+        width: 58px;
+        padding: 10px;
+    }
+    .sidebar > h3 {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+    .sidebar > h3::before,
+    .sidebar > h3::after {
+        display: none;
+    }
+    .sidebar ul li a span {
+        display: none;
+    }
+}
+/* End Side Bar */
+
+/* Start Content */
+.content {
+    overflow: hidden;
+}
+.content .search::before {
+    font-family: var(--fa-style-family-classic);
+    content: "\f002";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--grey-color);
+}
+.content .search input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-left: 30px;
+    width: 160px;
+    transition: width 0.3s;
+}
+.content .search input:focus {
+    width: 200px;
+    outline: #ddd;
+}
+.content .search input:focus::placeholder {
+    opacity: 0;
+}
+.head .icons .notification::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--red-color);
+    border-radius: 50%;
+    right: -5px;
+    top: -5px;
+}
+.head .icons img {
+    width: 32px;
+    height: 32px;
+    margin-left: 15px;
+}
+.page h1 {
+    margin: 20px 20px 40px;
+    cursor: pointer;
+    display: inline-block;
+}
+.page h1::before,
+.page h1::after {
+    content: "";
+    height: 3px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+.page h1::before {
+    background: white;
+    width: 120px;
+}
+.page h1::after {
+    background: black;
+    width: 40px;
+    transition: 0.3s ease;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.page h1:hover:after {
+    width: 120px;
+}
+.page .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+    .page .wrapper {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+/* End Content */
+
+/* Start Welcome */
+.welcome {
+    overflow: hidden;
+}
+.welcome .intro img {
+    width: 200px;
+    margin-bottom: -10px;
+}
+.welcome .body {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.welcome .body > div {
+    flex: 1;
+}
+.welcome .visit {
+    margin: 0 15px 15px auto;
+    transition: 0.3s;
+}
+.welcome .visit:hover {
+    background-color: var(--blue-alt-color);
+}
+.welcome .avatar {
+    width: 64px;
+    height: 64px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 2px;
+    box-shadow: 0 0 5px #ddd;
+    margin-left: 20px;
+    margin-top: -32px;
+}
+@media (max-width: 767px) {
+    .welcome .intro {
+        padding-bottom: 30px;
+    }
+    .welcome .avatar {
+        margin-left: 0;
+    }
+    .welcome .body > div:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+/* End Welcome */
+
+/* Start Quick-draft */
+.quick-draft textarea {
+    resize: none;
+    min-height: 180px;
+}
+.quick-draft .save {
+    margin-left: auto;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.quick-draft .save:hover {
+    background-color: var(--blue-alt-color);
+}
+/* End Quick-draft */
+
+/* Start Targets */
+.targets .target-raw .icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+}
+.targets .details {
+    flex: 1;
+}
+.targets .details .progress {
+    height: 4px;
+}
+.targets .details .progress > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+.targets .details .progress > span span {
+    position: absolute;
+    bottom: 16px;
+    right: -16px;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+.targets .details .progress > span span::before {
+    content: "";
+}
+.targets .details .progress > span span::after {
+    content: "";
+    border-color: transparent;
+    border-width: 5px;
+    border-style: solid;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.targets .details .progress > .blue span::after {
+    border-top-color: var(--blue-color);
+}
+.targets .details .progress > .oragne span::after {
+    border-top-color: var(--orange-color);
+}
+.targets .details .progress > .green span::after {
+    border-top-color: var(--green-color);
+}
+.targets .icon {
+    border-radius: 50%;
+}
+.blue .icon,
+.blue .progress {
+    background-color: rgb(0 117 255 / 20%);
+}
+.orange .icon,
+.orange .progress {
+    background-color: rgb(245 158 11 / 20%);
+}
+.green .icon,
+.green .progress {
+    background-color: rgb(0 117 255 / 20%);
+}
+/* End Targets */
+
+/* Start Tickets */
+.tickets .box {
+    border: 1px solid #ccc;
+    width: calc(50% - 10px);
+}
+@media (max-width: 767px) {
+    .tickets .box {
+        width: 100%;
+    }
+}
+/* End Tickets */
+
+/* Start Latest News */
+.latest-news .news-row:not(:last-of-type) {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.latest-news .news-row img {
+    width: 100px;
+    border-radius: 6px;
+    margin-right: 15px;
+}
+.latest-news .info {
+    flex-grow: 1;
+}
+.latest-news .info h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+@media (max-width: 767px) {
+    .latest-news .news-row {
+        display: block;
+    }
+    .latest-news .news-row .label {
+        margin: 10px auto;
+        width: fit-content;
+    }
+}
+/* End Latest News */
+
+/* Start Taskts */
+.tasks .task-row:not(:last-of-type) {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+.tasks .info {
+    flex-grow: 1;
+}
+.tasks .done {
+    opacity: 0.5;
+    color: var(--red-color);
+}
+.tasks .done h3,
+.tasks .done p {
+    text-decoration: line-through;
+}
+.tasks .delete {
+    cursor: pointer;
+    transition: 0.3s;
+}
+.tasks .delete:hover {
+    color: var(--red-color);
+}
+/* End Taskts */
+
+/* Start Latest Uploads */
+.latest-uploads ul li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+.latest-uploads ul li img {
+    height: 40px;
+    width: 40px;
+}
+/* End Latest Uploads */
+
+/* Start Last Project */
+.last-project ul::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--blue-color);
+}
+.last-project ul li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid white;
+    outline: 2px solid var(--blue-color);
+    margin-right: 15px;
+    z-index: 1;
+}
+.last-project ul li.done::before {
+    content: "";
+    background-color: var(--blue-alt-color);
+}
+.last-project ul li.current::before {
+    content: "";
+    animation: change-color 0.8s infinite alternate;
+}
+.last-project .lauch-icon {
+    position: absolute;
+    width: 140px;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    animation: fly 0.8s linear infinite;
+}
+/* End Last Project */
+
+/* Start remiders */
+.remiders ul li .key {
+    width: 15px;
+    height: 15px;
+}
+.remiders ul li > .blue {
+    border-left: 2px solid var(--blue-color);
+}
+.remiders ul li > .green {
+    border-left: 2px solid var(--green-color);
+}
+.remiders ul li > .orange {
+    border-left: 2px solid var(--orange-color);
+}
+.remiders ul li > .red {
+    border-left: 2px solid var(--red-color);
+}
+/* End remiders */
+
+/* Start Laterst Post */
+.latest-post .avatar {
+    width: 48px;
+    height: 48px;
+}
+.latest-post .post-contetn {
+    text-transform: capitalize;
+    line-height: 1.8;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    min-height: 140px;
+}
+.latest-post .post-stats i:hover {
+    cursor: pointer;
+}
+/* End Laterst Post */
+
+/* Start Social Media */
+.social-media .box {
+    padding-left: 70px;
+    overflow: hidden;
+}
+.social-media .box i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 52px;
+    transition: 0.3s;
+}
+.social-media .box:hover i {
+    transform: rotate(15deg);
+}
+.social-media .twitter {
+    background-color: rgba(29 161 242 / 20%);
+    color: #1da1f2;
+}
+.social-media .twitter i,
+.social-media .twitter a {
+    background-color: #1da1f2;
+}
+.social-media .facebook {
+    background-color: rgba(29 119 242 / 20%);
+    color: #18a1f2;
+}
+.social-media .facebook i,
+.social-media .facebook a {
+    background-color: #1da1f2;
+}
+.social-media .youtube {
+    background-color: rgba(255 0 0 / 20%);
+    color: #ff0000;
+}
+.social-media .youtube i,
+.social-media .youtube a {
+    background-color: #ff0000;
+}
+.social-media .linkedin {
+    background-color: rgba(0 119 181 / 20%);
+    color: #0077b5;
+}
+.social-media .linkedin i,
+.social-media .linkedin a {
+    background-color: #0077b5;
+}
+/* End Social Media */
+
+/* Start Animation */
+@keyframes change-color {
+    from {
+        background-color: var(--blue-color);
+    }
+    to {
+        background-color: white;
+    }
+}
+
+@keyframes fly {
+    to {
+        opacity: 1;
+        top: 50%;
+    }
+}
