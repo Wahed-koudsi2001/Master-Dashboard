@@ -209,3 +209,15 @@
 .h-full {
     height: 100%;
 }
+.mb-15 {
+    margin-bottom: 15px;
+}
+.border-ccc {
+    border: 1px solid #ccc;
+}
+.b-eee {
+    background: #eee;
+}
+.m-15 {
+    margin: 15px;
+}
