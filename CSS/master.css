@@ -725,6 +725,114 @@ ul {
 }
 /* End Settings */
 
+/* Start Profile Page */
+@media (max-width: 767px) {
+    .overview {
+        flex-direction: column;
+    }
+}
+.profile-page .avatar-box {
+    width: 300px;
+}
+@media (min-width: 767px) {
+    .profile-page .avatar-box {
+        border-right: 1px solid #eee;
+    }
+}
+.profile-page .avatar-box > img {
+    width: 120px;
+    height: 120px;
+}
+.profile-page .avatar-box .level {
+    height: 6px;
+    overflow: hidden;
+    margin: auto;
+    width: 70%;
+}
+.profile-page .avatar-box .level span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--blue-color);
+    border-radius: 6px;
+}
+.profile-page .info-box .box {
+    flex-wrap: wrap;
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+}
+.profile-page .info-box .box:hover {
+    background: #e9f9f9;
+}
+.profile-page .info-box .box > div {
+    padding: 10px 0 0;
+}
+@media (min-width: 767px) {
+    .profile-page .info-box .box > div {
+        min-width: 190px;
+    }
+}
+.profile-page .info-box h4 {
+    font-weight: normal;
+}
+@media (max-width: 767px) {
+    .profile-page .other-data {
+        flex-direction: column;
+    }
+}
+.profile-page .other-data .skills-card {
+    flex-grow: 1;
+}
+.profile-page .other-data .skills-card ul li {
+    padding: 15px 0;
+}
+.profile-page .other-data .skills-card ul li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+.profile-page .other-data .skills-card ul li span {
+    display: inline-flex;
+    padding: 4px 10px;
+    background-color: #eee;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.profile-page .other-data .skills-card ul li span:not(:last-child) {
+    margin-right: 5px;
+}
+.profile-page .other-data .activities {
+    flex-grow: 2;
+}
+.profile-page .other-data .activities .activity:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.profile-page .other-data .activities .activity img {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+}
+@media (min-width: 768px) {
+    .profile-page .other-data .activities .activity .data {
+        margin-left: auto;
+        text-align: right;
+    }
+}
+@media (max-width: 767px) {
+    .profile-page .other-data .activities .activity {
+        flex-direction: column;
+    }
+    .profile-page .other-data .activities .activity img {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .profile-page .other-data .activities .activity .data {
+        margin-top: 15px;
+    }
+}
+/* End Profile Page */
+
 /* Start Animation */
 @keyframes change-color {
     from {
