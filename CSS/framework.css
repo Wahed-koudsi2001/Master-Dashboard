@@ -94,9 +94,6 @@
 .mt-5 {
     margin-top: 5px;
 }
-.m-0 {
-    margin: 0;
-}
 .mt-20 {
     margin-top: 20px;
 }
@@ -220,4 +217,23 @@
 }
 .m-15 {
     margin: 15px;
+}
+.h-100 {
+    height: 100px;
+}
+.w-100 {
+    width: 100px;
+}
+.rad-half {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.border-eee {
+    border: 1px solid #eee;
+}
+.pt-10 {
+    padding-top: 10px;
 }
